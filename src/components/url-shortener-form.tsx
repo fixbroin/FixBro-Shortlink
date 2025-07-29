@@ -44,7 +44,7 @@ const initialState = {
 function SubmitButton() {
   const { pending } = useFormStatus();
   return (
-    <Button type="submit" disabled={pending} className="w-full bg-accent hover:bg-secondary text-accent-foreground hover:text-black font-bold text-lg py-6">
+    <Button type="submit" disabled={pending} className="w-full bg-accent hover:bg-accent/90 text-accent-foreground font-bold text-lg py-6">
       {pending ? "Shortening..." : "Shorten URL"}
     </Button>
   );
@@ -53,7 +53,7 @@ function SubmitButton() {
 export default function URLShortenerForm() {
   const [state, formAction] = useActionState(createShortLink, initialState);
   const [isCopied, setIsCopied] = useState(false);
-
+  
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -91,8 +91,8 @@ export default function URLShortenerForm() {
               control={form.control}
               name="originalUrl"
               render={({ field }) => (
-                <FormItem>
-                  <FormLabel className="sr-only">Long URL</FormLabel>
+                <FormItem className="text-left">
+                  <FormLabel>Long URL</FormLabel>
                   <FormControl>
                     <Input
                       placeholder="Enter your long URL here"
@@ -108,15 +108,15 @@ export default function URLShortenerForm() {
               control={form.control}
               name="customAlias"
               render={({ field }) => (
-                <FormItem>
-                  <FormLabel className="sr-only">Custom Alias</FormLabel>
+                <FormItem className="text-left">
+                  <FormLabel>Custom Alias (Optional)</FormLabel>
                   <FormControl>
                     <div className="relative flex items-center">
-                       <span className="absolute left-3 text-muted-foreground text-sm">FixBro Shortlink/</span>
+                       <span className="absolute left-3 text-muted-foreground text-sm">/</span>
                        <Input
-                        placeholder="your-custom-alias (optional)"
+                        placeholder="e.g., my-cool-link"
                         {...field}
-                        className="py-6 text-lg pl-32"
+                        className="py-6 text-lg pl-8"
                       />
                     </div>
                   </FormControl>
