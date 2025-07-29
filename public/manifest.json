@@ -1,0 +1,22 @@
+{
+  "name": "FixBro Shortlink",
+  "short_name": "FixBroLink",
+  "description": "The simplest and fastest way to shorten your long URLs for free. Create clean, memorable links with our powerful and easy-to-use URL shortener.",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#4285F4",
+  "background_color": "#E3F2FD",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait"
+}
