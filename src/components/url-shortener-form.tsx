@@ -44,7 +44,7 @@ const initialState = {
 function SubmitButton() {
   const { pending } = useFormStatus();
   return (
-    <Button type="submit" disabled={pending} className="w-full bg-accent hover:bg-accent/90 text-accent-foreground font-bold text-lg py-6">
+    <Button type="submit" disabled={pending} className="w-full bg-accent hover:bg-secondary text-accent-foreground hover:text-black font-bold text-lg py-6">
       {pending ? "Shortening..." : "Shorten URL"}
     </Button>
   );
